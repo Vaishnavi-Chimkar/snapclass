@@ -1,0 +1,22 @@
+# utilitities
+numpy 
+pandas
+
+# face recognition
+scikit-learn
+
+# face recognition
+dlib-bin
+
+# python -m pip install dlib-20.0.99-cp314-cp314-win_amd64.whl
+
+git+https://github.com/ageitgey/face_recognition_models
+setuptools<70.0.0
+
+supabase
+bcrypt #use for hashing (protection of password)
+
+segno  #to generate qrcode from link
+pillow  #to deal with image preprocessing,scaling,colour removing
+
+streamlit
