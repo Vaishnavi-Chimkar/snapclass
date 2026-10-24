@@ -20,3 +20,6 @@ segno  #to generate qrcode from link
 pillow  #to deal with image preprocessing,scaling,colour removing
 
 streamlit
+
+librosa #file edit load modify dividing into segment 
+resemblyzer #create embeddings
