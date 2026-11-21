@@ -45,7 +45,7 @@ def get_teacher_subjects(teacher_id):
     subjects = response.data
 
     for sub in subjects:
-        sub['total_students'] = sub.get("subject_student",[{}])[0].get('count',0) if sub.get('subject_students') else 0
+        sub['total_students'] = sub.get("subject_students",[{}])[0].get('count',0) if sub.get('subject_students') else 0
         attendance = sub.get('attendence_logs',[])
         unique_sessions = len(set(log['timestamp'] for log in attendance))
         sub['total_classes'] = unique_sessions
@@ -58,7 +58,7 @@ def enroll_student_to_subject(student_id,subject_id):
     response = supabase.table('subject_students').insert(data).execute()
     return response
 
-def enroll_student_to_subject(student_id,subject_id):
+def unenroll_student_to_subject(student_id,subject_id):
     response = supabase.table('subject_students').delete().eq('student_id',student_id).eq('subject_id',subject_id).execute()  
     return response
 
@@ -67,8 +67,14 @@ def get_student_subjects(student_id):
     return response.data
 
 def get_student_attendance(student_id):
-    response = supabase.table('attendance_logs').select('*,subjects(*)').eq('student_id',student_id).execute()
+    response = supabase.table('attendence_logs').select('*,subjects(*)').eq('student_id',student_id).execute()
+    return response.data
+
+def create_attendance(logs):
+    response = supabase.table('attendence_logs').insert(logs).execute()
     return response.data
 
 
-
+def get_attendance_for_teacher(teacher_id):
+    response = supabase.table('attendence_logs').select("*, subjects(*)").eq('subjects.teacher_id',teacher_id).execute()
+    return response.data
