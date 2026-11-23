@@ -282,13 +282,3 @@ Experience SnapClass here:
 - LinkedIn: https://www.linkedin.com/in/vaishnavi-chimkar-349390328/
 
 ---
-
-## ⭐ Show Your Support
-
-If you like this project, please consider giving the repository a ⭐ on GitHub.
-
-Your support motivates further development!
-
-<p align="center">
-  <b>SnapClass – Making Classroom Attendance Smarter with AI! 🚀</b>
-</p>
